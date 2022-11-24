@@ -1,0 +1,21 @@
+{
+  "name": "login-rate-limiter",
+  "version": "1.0.0",
+  "description": "Login service with a rate limiter",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src",
+    "test": "jest"
+  },
+  "author": {
+    "name": "Flaviu Fildan",
+    "email": "flaviu.fildan@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "4.18.2",
+    "ioredis": "^5.2.4",
+    "moment": "^2.29.4"
+  }
+}
