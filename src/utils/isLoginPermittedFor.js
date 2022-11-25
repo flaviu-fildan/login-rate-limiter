@@ -1,9 +1,9 @@
 const { getCacheKey, cache } = require("../cache");
-const { LOGIN_RATE_LIMIT, CACHE_LOGIN_ENTRY_KEY_PREFIX } = require("../constants");
+const { LOGIN_RATE_LIMIT, CACHE_KEY_PREFIX_LOGIN_ENTRY } = require("../constants");
 
 const isLoginPermittedFor = async (ipAddress) => {
   const keyPattern = {
-    prefix: CACHE_LOGIN_ENTRY_KEY_PREFIX,
+    prefix: CACHE_KEY_PREFIX_LOGIN_ENTRY,
     ipAddress,
     timestamp: '*',
   };

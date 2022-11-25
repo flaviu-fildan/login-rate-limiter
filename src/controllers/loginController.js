@@ -1,9 +1,11 @@
-const { isLoginPermittedFor, storeLoginEntry } = require('../utils');
+const { isLoginPermittedFor, storeLoginEntry, incrementLoginAttemptsCounter } = require('../utils');
 
 exports.post = async (req, res) => {
   const ipAddress = req.header('x-forwarded-for') || req.socket.remoteAddress;
 
   console.log('Request encountered from IP: ', ipAddress);
+
+  await incrementLoginAttemptsCounter(ipAddress);
 
   const isLoginPermitted = await isLoginPermittedFor(ipAddress);
   if (!isLoginPermitted) {
